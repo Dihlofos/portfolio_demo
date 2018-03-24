@@ -1,0 +1,35 @@
+.page-staff {
+	background-color: #000; 
+	color: #fff;
+	&__cases {
+		display: flex;
+		justify-content: left;
+		flex-grow: 1;
+		flex-wrap: wrap;
+	}
+	&__case-item {
+		width: 340px;
+		@media ($mobile-min) {
+			width: 100%;
+		}
+		@media ($mobile) {
+			width: 50%;
+		}
+		@media ($tablet) {
+			width: 33.33%;
+		}
+		@media ($desktop-min) {
+			width: 25%;
+		}
+		@media ($desktop-mid) {
+			width: 20%;
+		}
+		@media ($desktop-lg) {
+			width: 16.667%;
+		}
+		@media ($desktop-xl) {
+			width: 14.2857%
+		}
+	}
+
+}
