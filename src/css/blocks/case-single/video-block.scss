@@ -1,0 +1,22 @@
+.video-block {
+	padding: 5%;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-items: center;
+	&--half {
+		width: 50%;
+		video {
+			max-width: 600px;
+		}
+		@media ($tablet) {
+			width: 100%;
+		}
+	}
+	video,
+	iframe {
+		max-width: 100%;
+	}
+
+}

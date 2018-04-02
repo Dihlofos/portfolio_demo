@@ -1,3 +1,94 @@
-.site-header {
+.header {
+	display: flex;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 5;
+	transition: transform 1s;
+	&--top {
+		width: 100%;
+		padding-top: 43px;
+		padding-left: 5%;
+		padding-right: 5%;
+		top: 0;
+		left: 0;
+		@media ($tablet) {
+			padding-top: 22px;
+		}
+	}
+	&--right {
+		padding-top: 43px;
+		right: 0;
+		top: 0;
+		width: 10%;
+		height: 50%;
+		flex-direction: column;
+	}
+	&__link {
+		position: relative;
+		width: 34px;
+		height: 34px;
+		overflow: hidden;
+		animation-delay:0.3s;
+		span,
+		svg {
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			margin: auto;
+			transition: width 0.2s, height 0.2s;
+		}
+		&--main {	
+			span {
+				background-color: #0d71fc;
+				border-radius: 50%;
+				width: 18px;
+				height: 18px;			
+			}
+			&:hover {
+				span {
+					width: 22px;
+					height: 22px;
+				}
+			}
+			&:active {
+				span {
+					width: 14px;
+					height: 14px;
+				}
+			}
+		}
+		&--works {
+			&:hover {
+				svg {
+					width: 26px;
+					height: 26px;
+				}
+			}
+			&:active {
+				svg {
+					width: 18px;
+					height: 18px;
+				}
+			}
+		}
+		&--menu {
+			svg {
+				width: 26px;
+				height: 15px;
+			}
+			&:hover {
+				svg {
+					width: 30px;
+					height: 15px;
+				}
+			}
+			&:active {
+				svg {
+					width: 22px;
+					height: 15px;
+				}
+			}
+		}
+
+	}
 	
 }

@@ -1,0 +1,27 @@
+.case-single {
+	background: transparent;
+	&__first-screen {
+		min-height: 1000px;
+		height: 180vh;
+		background: transparent;
+		display: flex;
+		padding-top: 12.5%;
+		@media ($tablet) {
+			min-height: 500px;
+		}
+	}
+	&__main-screen {
+		min-height: 800px;
+		background-color: red;
+	}
+	&__section {
+		flex-wrap: wrap;
+	}
+}
+
+.parallax-slider {
+	transition: filter 0.5s;
+	&.blur {
+		filter: blur(10px);
+	}
+}
