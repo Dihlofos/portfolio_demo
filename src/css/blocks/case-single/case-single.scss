@@ -1,21 +1,25 @@
 .case-single {
 	background: transparent;
+	&__section {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		&--white {
+			background-color: #fff;
+			color: black;
+		}
+	}
 	&__first-screen {
 		min-height: 1000px;
-		height: 180vh;
+		height: 190vh;
 		background: transparent;
 		display: flex;
 		padding-top: 12.5%;
 		@media ($tablet) {
 			min-height: 500px;
 		}
-	}
-	&__main-screen {
-		min-height: 800px;
-		background-color: red;
-	}
-	&__section {
-		flex-wrap: wrap;
 	}
 }
 
