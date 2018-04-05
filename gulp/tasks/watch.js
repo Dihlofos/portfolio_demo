@@ -4,7 +4,7 @@ import { watch, series } from 'gulp';
 import browserSync from 'browser-sync';
 import html from './html';
 import css from './css';
-import { vendorScripts, scripts, jsLint } from './scripts';
+import { vendorScripts, scripts } from './scripts';
 import assets from './assets';
 import { svgSprite, pngSprite } from './sprites';
 import { $, source, config } from '../config';
@@ -19,7 +19,7 @@ const devWatch = () => {
     watch(source.css, series(css, reload));
     // JS
     watch(source.vendorJs, series(vendorScripts, reload));
-    watch([source.js, source.subJs], series(scripts, jsLint, reload));
+    watch([source.js, source.subJs], series(scripts, reload));
     // Sprites
     watch(source.svgSprite, series(svgSprite, reload));
     watch(source.pngSprite, series(pngSprite, reload));

@@ -19,12 +19,3 @@ export const scripts = () => src(source.js)
     .pipe($.if(production && !nominify, $.uglify()))
     .pipe(($.if(!production, $.sourcemaps.write('.'))))
     .pipe(dest(build.scripts))
-
-let sourceJs = source.js.slice();
-sourceJs.push(source.subJs);
-
-// JS Lint
-export const jsLint = () => src(sourceJs)
-    .pipe($.plumber())
-    .pipe($.jshint())
-    .pipe($.jshint.reporter());

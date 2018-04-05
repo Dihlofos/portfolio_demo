@@ -1,5 +1,6 @@
 'use strict';
 
+import sassGlob from 'gulp-sass-glob';
 import { src, dest } from 'gulp';
 import { production, nominify, $, source, build, config } from '../config';
 
@@ -8,7 +9,7 @@ const css = () => src(source.css)
     .pipe($.plumber())
     .pipe($.changed(source.css))
     .pipe($.if(!production, $.sourcemaps.init()))
-    .pipe($.cssGlobbing(config.cssGlobbing))
+    .pipe(sassGlob())
     .pipe($.sass(config.sass).on('error', $.sass.logError))
     .pipe($.autoprefixer(config.autoprefixer))
     .pipe($.combineMq(config.combineMq))

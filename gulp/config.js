@@ -63,10 +63,6 @@ export const config = {
         outputStyle: production ? 'compressed' : 'expanded'
     },
 
-    cssGlobbing: {
-        extensions: ['.scss']
-    },
-
     include: {
         extensions: 'js',
         hardFail: true,
@@ -104,14 +100,8 @@ export const config = {
 
     svgSprite: {
         mode: {
-            sprites: {
-                mode: {
-                    inline: true,
-                    symbol: {
-                        prefix: 'icon-%s',
-                        sprite: 'icons.svg'
-                    }
-                }
+            symbol: {
+                sprite: '../icons.svg'
             }
         }
     },

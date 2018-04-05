@@ -6,7 +6,7 @@ import { src, dest } from 'gulp';
 import { $, source, build, config } from '../config';
 import 'path';
 
-// Sprites
+// SVG sprite
 export const svgSprite = () => src(source.svgSprite)
     .pipe($.plumber())
     .pipe($.changed(source.svgSprite))
