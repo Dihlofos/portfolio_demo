@@ -1,0 +1,15 @@
+.image-block {
+	padding: 8%;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-items: center;
+	@media ($mobile) {
+		padding: 15%;
+	}
+	img {
+		max-width: 100%;
+	}
+
+}

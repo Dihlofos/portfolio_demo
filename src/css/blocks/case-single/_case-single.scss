@@ -1,0 +1,64 @@
+.case-single {
+	background: transparent;
+	&__section {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		@media ($mobile) {
+			height: auto;
+			min-height: 300px;
+		}
+		&--white {
+			background-color: #fff;
+			color: black;
+		}
+		&--black {
+			background-color: black;
+			color: white;
+		}
+	}
+	&__first-screen {
+		height: 190vh;
+		background: transparent;
+		display: flex;
+		padding-top: 12.5%;
+		.case-single__half {
+			height: 40%;
+		}
+		@media ($tablet) {
+			min-height: 500px;
+		}
+	}
+
+	&__half {
+		width: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		@media ($mobile) {
+			height: auto;
+			min-height: 300px;
+		}
+		.text-block {
+			padding: 15%;
+		}
+
+		@media ($tablet) {
+			width: 100%;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			padding-left: 48px;
+			padding-right: 48px;
+		}
+	}
+}
+
+.parallax-slider {
+	transition: filter 0.5s;
+	&.blur {
+		filter: blur(10px);
+	}
+}

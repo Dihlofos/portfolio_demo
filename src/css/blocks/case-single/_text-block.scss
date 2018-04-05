@@ -1,25 +1,11 @@
 .text-block {
-	padding: 5%;
+	padding: 8%;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	&--half {
-		width: 50%;
-		.text-block__title,
-		.text-block__text,
-		.text-block__subtext,
-		.text-block__copyright
-		 {
-			max-width: 600px;
-		}
-		@media ($tablet) {
-			width: 100%;
-			padding-top: 15px;
-			padding-bottom: 15px;
-			padding-left: 48px;
-			padding-right: 48px;
-		}
+	@media ($mobile) {
+		padding: 15%;
 	}
 	&--white {
 		background-color: #fff;
@@ -30,6 +16,7 @@
 		line-height: 1.18;
 		font-weight: 800;
 		max-width: 950px;
+		margin-bottom: 24px;
 		@media ($tablet) {
 			font-size: 22px;
 			line-height: 1.27;

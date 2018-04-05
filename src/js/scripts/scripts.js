@@ -7,6 +7,15 @@ $(function() {
 		}
 	);
 
+	$('.slider').slick({
+	  dots: true,
+	  infinite: true,
+	  speed: 500,
+	  fade: true,
+	  arrows: false,
+	  cssEase: 'linear'
+	});
+
 	$(window).on("scroll", function(){		
 		var vh = $(window).height();
 		if ($(window).scrollTop() > (vh - $(".header").height())){
