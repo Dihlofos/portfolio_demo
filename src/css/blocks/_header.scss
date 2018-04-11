@@ -37,13 +37,27 @@
 			transition: width 0.2s, height 0.2s;
 		}
 		&--main {	
+			.header__link-cont{
+				position: absolute;
+				top: 0; left: 8px; bottom: 0; right: auto;
+				margin: auto;
+				width: 18px;
+				height: 18px;	
+				overflow: hidden;
+				animation-delay: 1.5s;
+			}			
 			span {
+				left: auto;
 				background-color: #0d71fc;
 				border-radius: 50%;
 				width: 18px;
 				height: 18px;			
 			}
-			&:hover {
+			&:hover {		
+				.header__link-cont{
+					height: 22px;
+					width: 22px;
+				}	
 				span {
 					width: 22px;
 					height: 22px;
@@ -57,6 +71,20 @@
 			}
 		}
 		&--works {
+			.header__link-cont{
+				position: absolute;
+				top: 0; left: 8px; bottom: 0; right: auto;
+				margin: auto;
+				height: 22px;	
+				overflow: hidden;
+				animation-delay: 1.5s;
+			}	
+			svg {
+				left: auto;
+				width: 22px;
+				height: 22px;			
+			}		
+
 			&:hover {
 				svg {
 					width: 26px;
@@ -71,10 +99,19 @@
 			}
 		}
 		&--menu {
+			.header__link-cont{
+				position: absolute;
+				top: 0; left: 6px; bottom: 0; right: auto;
+				margin: auto;
+				height: 15px;	
+				overflow: hidden;
+				animation-delay: 1.5s;
+			}	
 			svg {
+				left: auto;
 				width: 26px;
-				height: 15px;
-			}
+				height: 15px;			
+			}	
 			&:hover {
 				svg {
 					width: 30px;

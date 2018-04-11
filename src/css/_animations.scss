@@ -1,9 +1,31 @@
-@keyframes width-rise {
+@keyframes width-rise-18 {
   0% {
     width: 1px;
+    transform: translateX(18px);
   }
   100% {
-    width:34px;
+    width: 18px;
+    transform: translateX(0);
+  }
+}
+@keyframes width-rise-22 {
+  0% {
+    width: 1px;
+    transform: translateX(22px);
+  }
+  100% {
+    width: 22px;
+    transform: translateX(0);
+  }
+}
+@keyframes width-rise-26 {
+  0% {
+    width: 1px;
+    transform: translateX(26px);
+  }
+  100% {
+    width: 26px;
+    transform: translateX(0);
   }
 }
 
@@ -72,8 +94,14 @@
 
 
 
-.width-rise {
-  animation: width-rise 1.4s linear both;
+.width-rise-18 {
+  animation: width-rise-18 0.5s linear both;
+}
+.width-rise-22 {
+  animation: width-rise-22 0.5s linear both;
+}
+.width-rise-26 {
+  animation: width-rise-26 0.5s linear both;
 }
 .width-rise-reverse {
 	animation: width-rise 0.4s linear reverse;
