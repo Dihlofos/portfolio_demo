@@ -6,30 +6,34 @@ var APP = {};
 $(function () {
 
 	$('.js-parallax-first').parallax({
-		imageSrc: 'assets/img/bg-samsung-tab.jpg',
-		speed: 0
+		speed: 0,
+		naturalWidth: 1024,
+		naturalHeight: 600
 	});
 
 	$('.slider').slick({
 		dots: true,
 		infinite: true,
 		speed: 500,
-		fade: true,
+		fade: false,
 		arrows: false,
 		cssEase: 'linear'
 	});
 
 	$(window).on("scroll", function () {
 		var vh = $(window).height();
+		var scrollState = false;
 		if ($(window).scrollTop() > vh - $(".header").height()) {
 			$(".header").attr("style", "transform: translateY(-100px);");
 		} else {
 			$(".header").attr("style", "transform: translateY(0);");
 		}
-		if ($(window).scrollTop() > 0) {
+		if ($(window).scrollTop() > 0 && scrollState == false) {
 			$(".parallax-slider").addClass("blur");
+			scrollState = true;
 		} else {
 			$(".parallax-slider").removeClass("blur");
+			scrollState = false;
 		}
 	});
 

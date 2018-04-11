@@ -8,13 +8,13 @@ $color-white: #fff;
 /* MEDIA QUERIES */
 
 $tablet-width: 102px;
-$mobile-width: 768px;
+$mobile-width: 76px;
 
 /* MEDIA QUERIES */
 
 
 $mobile-min: unquote("max-width: 479px");
-$mobile: unquote("max-width: 768px");
+$mobile: unquote("max-width: 767px");
 $tablet: unquote("max-width: 1023px");
 $desktop-min: unquote("max-width: 1280px");
 $desktop-mid: unquote("max-width: 1440px");

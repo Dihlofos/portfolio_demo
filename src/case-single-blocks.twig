@@ -1,0 +1,135 @@
+{% extends 'templates/base.twig' %}
+
+<!-- HEADER -->
+
+  
+{% block header %}
+	{% include 'templates/includes/header-top.twig' %}
+{% endblock %}
+    <!-- /HEADER -->
+
+{% block title %}Главная{% endblock %}
+
+
+{% block page %}
+  <div class="page case-single">
+  	<section class="case-single__section case-single__first-screen js-parallax-first" data-bleed="10" data-parallax="scroll" data-image-src="assets/img/bg-samsung-tab.jpg">
+      <div class="case-single__half">
+    		<div class="text-block">
+          <div class="text-block__content slide-in-top js-appear">
+    			 <h1 class="text-block__title">Лэндинг для предзаказа Samsung Galaxy S8</h1>
+          </div>
+    		</div>
+      </div>
+      <div class="case-single__half">
+    		<div class="text-block">
+          <div class="text-block__content slide-in-top js-appear">
+      			<div class="text-block__text">Сделать возможным онлайн-предзаказ на рассрочку нового телефона Samsung Galaxy S8</div>
+      			<div class="text-block__subtext">Проектирование, дизайн</div>
+      			<div class="text-block__copyright">© Home Credit Bank, 2016</div>
+          </div>		
+    		</div>
+      </div>
+      <div class="video-block">
+        <div class="video-block__content slide-in-top">
+          <iframe src="https://player.vimeo.com/video/260728769" width="640" height="438" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+      </div>
+  	</section>
+    <section class="case-single__section case-single__section--white">
+      <div class="text-block">
+        <div class="text-block__content slide-in-top">
+         <h1 class="text-block__title">Остальные блоки</h1>
+         <div class="text-block__text">Ниже идут блоки, которых не было в макете лэндиннга самсунга, сначало в пол ширины, потом на всю ширину</div>
+        </div>
+      </div>
+    </section>
+    <section class="case-single__section case-single__section--black">
+      <div class="case-single__half" style="background: url('assets/img/bg_image-block1.jpg');">
+        <div class="slider-block slider">
+          <div class="slider-block__item">
+            <img width="149" height="149"
+                src="assets/img/slider-image-1_1.png"
+                srcset = "assets/img/slider-image-1_2.png 2x,
+                          assets/img/slider-image-1_3.png 2x
+                          "
+            >
+          </div>
+          <div class="slider-block__item">
+            <img width="693" height="387"
+                src="assets/img/image-block_1_1.png"
+                srcset = "assets/img/image-block_1_2.png 2x
+                          "
+            >
+          </div>
+          <div class="slider-block__item">
+            <video poster="http://northernsky.pw/wp-content/themes/mytheme/img/bg.jpg" width="693" height="417">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="case-single__half">
+        <div class="slider-block slider slider-block--full">
+          <div class="slider-block__item">
+            <img width="149" height="149"
+                src="assets/img/slider-full.jpg"
+            >
+          </div>
+          <div class="slider-block__item">
+            <img src="http://northernsky.pw/wp-content/themes/mytheme/img/bg.jpg" width="693" height="417">
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <section class="case-single__section">
+      <div class="case-single__half" style="background: url('assets/img/bg_image-block1.jpg');">
+        <div class="text-block">
+          <div class="text-block__content slide-in-top">
+            <div class="text-block__title">Бизнес процессы и работа по Agile</div>
+            <div class="text-block__subtext">Приложение спроектировано таким образом, что по мере того, как клиента "обрастает" продуктами - приложение обрастает новыми функциями</div>   
+          </div>    
+        </div>
+      </div>
+      <div class="case-single__half case-single__half--white">
+        <div class="text-block text-block--white">
+          <div class="text-block__content slide-in-top">
+            <div class="text-block__title">UX-решение</div>
+            <div class="text-block__subtext">Главные УТП и кнопка оформления рассрочки всегда в поле зрения пользователя. Френдли-процесс оформления рассрочки в два клика.</div>   
+          </div>    
+        </div>
+      </div>
+
+    </section>
+
+    <section class="case-single__section">
+      <div class="case-single__full" style="background: url('assets/img/bg_image-block1.jpg');">
+        <div class="text-block">
+          <div class="text-block__content slide-in-top">
+            <div class="text-block__title">Бизнес процессы и работа по Agile</div>
+            <div class="text-block__subtext">Приложение спроектировано таким образом, что по мере того, как клиента "обрастает" продуктами - приложение обрастает новыми функциями</div>   
+          </div>    
+        </div>
+      </div>
+      
+
+    </section>
+     <section class="case-single__section case-single__section--long">
+      <div class="image-block">
+        <img class="image-block__image" width="693" height="387"
+                src="assets/img/long-image.jpg"
+          >
+      </div>
+    </section>
+
+    <section class="case-single__bottom js-parallax-first" data-bleed="10" data-parallax="scroll" data-image-src="assets/img/bg-bottom.jpg">
+      <div class="case-single__bottom-title">
+        Личный кабинет Пользы
+      </div>
+      <a href="#" class="case-single__bottom-link">Следующий проект</a>
+
+    </section>
+
+	</div>
+	
+{% endblock %}

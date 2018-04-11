@@ -5,11 +5,17 @@
 	justify-content: flex-end;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 78px;
+	padding-bottom: 78px;
+	@media ($tablet) {
+		padding: 61px;
+	}
 	@media ($mobile) {
 		padding: 48px;
 	}
 	img {
 		max-width: 100%;
+		width: auto;
 	}
 
 }
