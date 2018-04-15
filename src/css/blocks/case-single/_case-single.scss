@@ -1,11 +1,14 @@
 .case-single {
 	background: transparent;
+	padding-bottom: 50vh;
 	&__section {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+		position: relative;
+		z-index: 10;
 		@media ($tablet){
 			height: auto;	
 			min-height: 600px;
@@ -31,6 +34,9 @@
 		background: transparent;
 		display: flex;
 		padding-top: 12.5%;
+		background-size: cover;
+		background-position: 50% 0;
+		background-repeat: no-repeat;
 		@media ($tablet){
 			padding: 61px;
 		}
@@ -95,6 +101,8 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
+		background-color: black;
+		color: white;
 		@media ($tablet) {
 			min-height: 600px;
 		}
@@ -117,6 +125,10 @@
 			background-color: #fff;
 			color: black;
 		}
+		&--transparent {
+			background: transparent;
+			color: white;
+		}
 	}
 	&__full {
 		width: 100%;
@@ -124,12 +136,18 @@
 		justify-content: center;
 		align-items: center;
 		height: 100%;
+		background-color: black;
+		color: white;
 		@media ($tablet) {
 			min-height: 600px;
 		}
 		&--white {
 			background-color: #fff;
 			color: black;
+		}
+		&--transparent {
+			background: transparent;
+			color: white;
 		}
 		.text-block__content {
 			display: flex;
@@ -143,11 +161,39 @@
 	}
 	&__bottom {
 		height: 50vh;
-		background: transparent;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		z-index: -150;
+		color: white;
+		text-decoration: none;
+		transition: height 1s;
+		&.is-clickable {
+			z-index: 0;
+		}
+		&.full {
+			height: 100vh;
+			z-index: 100;
+		}
+	}
+	&__bottom-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-size: cover;
+		background-position: 50% 50%;
+		height: 100%;
+		width: 100%;
+		&.blur {
+			filter: blur(10px);
+		}
+		
+
 	}
 	&__bottom-title {
 		font-size: 34px;
@@ -155,6 +201,7 @@
 		font-weight: 800;
 		max-width: 950px;
 		margin-bottom: 24px;
+		z-index: 5;
 		@media ($tablet) {
 			font-size: 22px;
 			line-height: 1.27;
@@ -167,6 +214,7 @@
   	color: #0d71fc;
   	text-decoration: none;
   	text-transform: uppercase;
+  	z-index: 5;
 	}
 }
 

@@ -58,28 +58,52 @@
 		bottom: 0px;
 	}
 	li {
-		margin-right: 12px;
+		//margin-right: 12px;
 		display: inline-block;
-		width: 10px;
-		height: 10px;
-		font-size: 0;
-		
+		width: 16px;
+		height: 16px;
+		font-size: 0;		
 		button{
-			background-color: #fff;
-			border-radius: 50%;
-			width: 6px;
-			height: 6px;
-			padding: 0;
+			position: relative;
+			width: 16px;
+			height: 16px;
+			border: none;
 			font-size: 0;
-			border: 0;
+			background: transparent;
 			cursor: pointer;
+			&:before {
+				position: absolute;
+				content: " ";
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				background-color: #fff;
+				border-radius: 50%;
+				width: 6px;
+				height: 6px;
+				padding: 0;
+				font-size: 0;
+				border: 0;
+				cursor: pointer;
+				&:focus,
+				&:active {
+					outline: none;
+				}
+			}
+			
 		}
 		&.slick-active {
-			width: 10px;
-			height: 10px;
+			width: 16px;
+			height: 16px;
 			button {
-				width: 10px;
-				height: 10px;
+				width: 16px;
+				height: 16px;
+				&:before {
+					width: 10px;
+					height: 10px;
+				}
 			}
 		}	
 	}
@@ -88,4 +112,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	cursor: move; /* fallback: no `url()` support or images disabled */
+  cursor: -webkit-grab; /* Chrome 1-21, Safari 4+ */
+  cursor:    -moz-grab; /* Firefox 1.5-26 */
+  cursor:         grab;
+  &:active {
+  	cursor: -webkit-grabbing;
+    cursor:    -moz-grabbing;
+    cursor:         grabbing;
+  }
 }
+
+  /* the slides */
+  .slick-slide {
+    margin: 0 25px;
+  }
+  /* the parent */
+  .slick-list {
+    margin: 0 -25px;
+  }

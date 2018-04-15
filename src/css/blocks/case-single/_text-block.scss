@@ -2,8 +2,8 @@
 	padding: 8%;
 	width: 100%;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
+	max-width: 1400px;
 	@media ($tablet) {
 		padding: 61px;
 	}
@@ -20,6 +20,7 @@
 		font-weight: 800;
 		max-width: 950px;
 		margin-bottom: 24px;
+		margin-top: 0;
 		@media ($tablet) {
 			font-size: 22px;
 			line-height: 1.27;
