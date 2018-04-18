@@ -135,7 +135,7 @@ $(function() {
           function() {
           	$('html,body').animate({ scrollTop: 0 }, 0);
           	
-          	history.pushState(null, null, $(".js-bottom").attr("href"));
+          	history.pushState(null, null, str + $(".js-bottom").attr("href"));
           	changePage();
           }
         );
