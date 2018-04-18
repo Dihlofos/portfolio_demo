@@ -1,5 +1,11 @@
 $(function() {
 
+		var str = String(window.location).substr(0, String(window.location).lastIndexOf("/"));
+		console.log($(".js-bottom").attr("href"));
+		console.log(str)
+
+
+
 	$('.slider').slick({
 	  dots: true,
 	  infinite: true,
@@ -31,7 +37,7 @@ $(function() {
 	          "transitionend",
 	          function() {
 	          	$('html,body').animate({ scrollTop: 0 }, 0);
-	          	history.pushState(null, null, $(".js-bottom").attr("href"));
+	          	history.pushState(null, null, str + $(".js-bottom").attr("href"));
 	          	changePage();
 	          }
 	        );
@@ -128,6 +134,7 @@ $(function() {
           "transitionend",
           function() {
           	$('html,body').animate({ scrollTop: 0 }, 0);
+          	
           	history.pushState(null, null, $(".js-bottom").attr("href"));
           	changePage();
           }
