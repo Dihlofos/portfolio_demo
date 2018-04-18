@@ -1,8 +1,6 @@
 $(function() {
 
-		var str = String(window.location).substr(0, String(window.location).lastIndexOf("/"));
-		console.log($(".js-bottom").attr("href"));
-		console.log(str)
+	
 
 
 
@@ -26,6 +24,7 @@ $(function() {
 		});
 
 		$(".js-bottom").on("click", function(e){
+			var address = String(window.location).substr(0, String(window.location).lastIndexOf("/"));
 			e.preventDefault();
 			$(this).addClass("full");
 			$(".case-single__bottom-title").addClass("slide-out-bottom");
@@ -37,7 +36,7 @@ $(function() {
 	          "transitionend",
 	          function() {
 	          	$('html,body').animate({ scrollTop: 0 }, 0);
-	          	history.pushState(null, null, str + $(".js-bottom").attr("href"));
+	          	history.pushState(null, null, address + $(".js-bottom").attr("href"));
 	          	changePage();
 	          }
 	        );
@@ -123,6 +122,7 @@ $(function() {
    );
 
 	$(".js-bottom").on("click", function(e){
+		var address = String(window.location).substr(0, String(window.location).lastIndexOf("/"));
 		e.preventDefault();
 		$(this).addClass("full");
 		$(".case-single__bottom-title").addClass("slide-out-bottom");
@@ -135,7 +135,7 @@ $(function() {
           function() {
           	$('html,body').animate({ scrollTop: 0 }, 0);
           	
-          	history.pushState(null, null, str + $(".js-bottom").attr("href"));
+          	history.pushState(null, null, address + $(".js-bottom").attr("href"));
           	changePage();
           }
         );
