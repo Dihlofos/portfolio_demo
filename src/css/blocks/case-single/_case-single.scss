@@ -1,6 +1,7 @@
 .case-single {
 	background: transparent;
 	padding-bottom: 50vh;
+	overflow-x:hidden;
 	&__section {
 		display: flex;
 		flex-wrap: wrap;
@@ -27,6 +28,7 @@
 		&--long {
 			height: auto;
 			min-height: 100vh;
+			background-color: black;
 		}
 	}
 	&__first-screen {
@@ -37,6 +39,7 @@
 		background-size: cover;
 		background-position: 50% 0;
 		background-repeat: no-repeat;
+		background-attachment: fixed;
 		@media ($tablet){
 			padding: 61px;
 		}
@@ -103,6 +106,7 @@
 		height: 100%;
 		background-color: black;
 		color: white;
+		overflow:hidden;
 		@media ($tablet) {
 			min-height: 600px;
 		}
@@ -171,13 +175,13 @@
 		z-index: -150;
 		color: white;
 		text-decoration: none;
-		transition: height 1s;
+		transition: all 1s;
 		&.is-clickable {
 			z-index: 0;
 		}
 		&.full {
 			height: 100vh;
-			z-index: 100;
+			z-index: 10;
 		}
 	}
 	&__bottom-bg {
@@ -186,7 +190,7 @@
 		left: 0;
 		z-index: 0;
 		background-size: cover;
-		background-position: 50% 50%;
+		background-position: 50% 0;
 		height: 100%;
 		width: 100%;
 		&.blur {
@@ -202,6 +206,7 @@
 		max-width: 950px;
 		margin-bottom: 24px;
 		z-index: 5;
+		text-align: center;
 		@media ($tablet) {
 			font-size: 22px;
 			line-height: 1.27;

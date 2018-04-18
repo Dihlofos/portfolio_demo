@@ -43,6 +43,9 @@
 				bottom: 100px;
 			}
 		}
+		@media ($mobile) {
+			padding: 0;
+		}
 	}
 }
 .slick-dots {
