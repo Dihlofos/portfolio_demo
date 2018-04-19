@@ -1,7 +1,7 @@
 .case-single {
 	background: transparent;
 	padding-bottom: 50vh;
-	overflow-x:hidden;
+	overflow-x: hidden;
 	&__section {
 		display: flex;
 		flex-wrap: wrap;
@@ -35,11 +35,35 @@
 		height: 190vh;
 		background: transparent;
 		display: flex;
+		position: relative;
 		padding-top: 12.5%;
+		/*
 		background-size: cover;
 		background-position: 50% 0;
 		background-repeat: no-repeat;
-		background-attachment: fixed;
+		background-attachment: fixed;*/
+		&:before{
+			background-size: cover;
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+	    background-size: cover;
+	    content: ' ';
+	    height: 100%;
+	    left: 0;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    will-change: transform;
+	    z-index: -1;
+		}
+
+
+		&.blur {
+			&:before{
+				filter: blur(10px);
+			}
+		}
 		@media ($tablet){
 			padding: 61px;
 		}
@@ -96,6 +120,15 @@
 			font-size: 16px;
 			line-height: 1.88;
 		}
+	}
+
+	&__bg-first {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 105%;
+		height: 105%;
+		transition: filter 0.5s;
 	}
 
 	&__half {

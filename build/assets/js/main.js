@@ -1,27 +1,32 @@
-'use strict';
+"use strict";
 
 svg4everybody();
 
 var APP = {};
 $(function () {
+	$(".js-top:before").css("background-image", "url(" + $(".js-top").data("bg-url") + ");");
 
-	$('.slider').slick({
+	document.styleSheets[0].insertRule(".js-top:before{background-image: url(" + $(".js-top").data("bg-url") + ");}", 0);
+	//document.styleSheets[0].addRule('.js-top:before','background-image: url(' + $(".js-top").data("bg-url") + ');')
+
+
+	$(".slider").slick({
 		dots: true,
 		infinite: true,
 		speed: 500,
 		fade: false,
 		arrows: false,
-		cssEase: 'linear'
+		cssEase: "linear"
 	});
 
 	$(document).on("reinit", function () {
-		$('.slider').slick({
+		$(".slider").slick({
 			dots: true,
 			infinite: true,
 			speed: 500,
 			fade: false,
 			arrows: false,
-			cssEase: 'linear'
+			cssEase: "linear"
 		});
 
 		$(".js-bottom").on("click", function (e) {
@@ -34,7 +39,7 @@ $(function () {
 			$(".case-single__section").remove();
 			$(".header__link-cont").addClass("width-rise-18 width-rise-22 width-rise-26");
 			$(this).one("transitionend", function () {
-				$('html,body').animate({ scrollTop: 0 }, 0);
+				$("html,body").animate({ scrollTop: 0 }, 0);
 				history.pushState(null, null, address + $(".js-bottom").attr("href"));
 				changePage();
 			});
@@ -44,10 +49,6 @@ $(function () {
 		$(".js-appear").each(function (index) {
 			appears[index] = new Scrolling($(this), 130);
 		});
-	});
-
-	$(window).on("load", function () {
-		$(".preloader").fadeOut('slow');
 	});
 
 	$(window).on("scroll", function () {
@@ -67,10 +68,10 @@ $(function () {
 		}
 
 		if ($(window).scrollTop() > 0 && scrollState == false) {
-			$(".parallax-slider").addClass("blur");
+			$(".js-top").addClass("blur");
 			scrollState = true;
 		} else {
-			$(".parallax-slider").removeClass("blur");
+			$(".js-top").removeClass("blur");
 			scrollState = false;
 		}
 	});
@@ -121,7 +122,7 @@ $(function () {
 		$(".case-single__section").remove();
 		$(".header__link-cont").addClass("width-rise-18 width-rise-22 width-rise-26");
 		$(this).one("transitionend", function () {
-			$('html,body').animate({ scrollTop: 0 }, 0);
+			$("html,body").animate({ scrollTop: 0 }, 0);
 
 			history.pushState(null, null, address + $(".js-bottom").attr("href"));
 			changePage();
@@ -130,24 +131,24 @@ $(function () {
 
 	function loadPage(url) {
 		return fetch(url, {
-			method: 'GET'
+			method: "GET"
 		}).then(function (response) {
 			return response.text();
 		});
 	}
 
-	var main = document.querySelector('body');
+	var main = document.querySelector("body");
 	var getHeader = $(".header");
 	function changePage() {
 		// Заметьте, что URL уже изменился
 		var url = window.location.href;
 
 		loadPage(url).then(function (responseText) {
-			var wrapper = document.createElement('div');
+			var wrapper = document.createElement("div");
 			wrapper.innerHTML = responseText;
 
-			var oldContent = document.querySelector('.page');
-			var newContent = wrapper.querySelector('.page');
+			var oldContent = document.querySelector(".page");
+			var newContent = wrapper.querySelector(".page");
 
 			main.appendChild(newContent);
 			animate(oldContent, newContent);
@@ -155,8 +156,7 @@ $(function () {
 	}
 
 	function animate(oldContent, newContent) {
-
-		oldContent.style.position = 'absolute';
+		oldContent.style.position = "absolute";
 
 		var fadeOut = oldContent.animate({
 			opacity: [1, 0]

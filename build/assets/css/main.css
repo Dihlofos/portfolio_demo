@@ -749,11 +749,34 @@ input:-ms-input-placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   padding-top: 12.5%;
+ /*
+		background-size: cover;
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-attachment: fixed;*/;
+}
+
+.case-single__first-screen:before {
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  content: ' ';
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  z-index: -1;
+}
+
+.case-single__first-screen.blur:before {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
 }
 
 .case-single__first-screen .case-single__half {
@@ -767,6 +790,19 @@ input:-ms-input-placeholder {
 .case-single__first-screen .text-block__subtext {
   font-size: 16px;
   line-height: 1.88;
+}
+
+.case-single__bg-first {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: 105%;
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  -o-transition: filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
 }
 
 .case-single__half {
