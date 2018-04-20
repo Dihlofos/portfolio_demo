@@ -37,18 +37,13 @@
 		display: flex;
 		position: relative;
 		padding-top: 12.5%;
-		/*
-		background-size: cover;
-		background-position: 50% 0;
-		background-repeat: no-repeat;
-		background-attachment: fixed;*/
 		&:before{
 			background-size: cover;
 			background-position: 50% 0;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 	    background-size: cover;
-	    content: ' ';
+	    
 	    height: 100%;
 	    left: 0;
 	    position: fixed;
@@ -56,7 +51,14 @@
 	    width: 100%;
 	    will-change: transform;
 	    z-index: -1;
+	    transition: filter 0.5s;
 		}
+		&.active {
+			&:before {
+				content: ' ';
+			}
+		}
+		
 
 
 		&.blur {

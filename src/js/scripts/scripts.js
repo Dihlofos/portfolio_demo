@@ -52,6 +52,13 @@ $(function() {
 		$(".js-appear").each(function(index) {
 			appears[index] = new Scrolling($(this), 130);
 		});
+
+		$(".js-top:before").css(
+			"background-image",
+			"url(" + $(".js-top").data("bg-url") + ");"
+		);
+
+		document.styleSheets[0].insertRule(".js-top:before{background-image: url(" + $(".js-top").data("bg-url") + ");}", 0);
 	});
 
 	$(window).on("scroll", function() {
@@ -66,8 +73,10 @@ $(function() {
 
 		if ($(window).scrollTop() > $(".js-top").height()) {
 			$(".js-bottom").addClass("is-clickable");
+			$(".js-top").removeClass("active");
 		} else {
 			$(".js-bottom").removeClass("is-clickable");
+			$(".js-top").addClass("active");
 		}
 
 		if ($(window).scrollTop() > 0 && scrollState == false) {

@@ -751,11 +751,6 @@ input:-ms-input-placeholder {
   display: flex;
   position: relative;
   padding-top: 12.5%;
- /*
-		background-size: cover;
-		background-position: 50% 0;
-		background-repeat: no-repeat;
-		background-attachment: fixed;*/;
 }
 
 .case-single__first-screen:before {
@@ -764,7 +759,6 @@ input:-ms-input-placeholder {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  content: ' ';
   height: 100%;
   left: 0;
   position: fixed;
@@ -772,6 +766,15 @@ input:-ms-input-placeholder {
   width: 100%;
   will-change: transform;
   z-index: -1;
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  -o-transition: filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+.case-single__first-screen.active:before {
+  content: ' ';
 }
 
 .case-single__first-screen.blur:before {
