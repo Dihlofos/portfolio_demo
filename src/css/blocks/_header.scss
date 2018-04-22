@@ -129,7 +129,7 @@
 					height: 15px;			
 				}
 				&.after-anim {
-					left: 0;
+					transition: all 0.2s;
 					right: 0;
 					svg {
 						left: 0;
@@ -141,6 +141,7 @@
 				.header__link-cont{
 					height: 15px;
 					width: 30px;
+					left: 2px;
 				}	
 				svg {
 					width: 30px;
@@ -148,6 +149,11 @@
 				}
 			}
 			&:active {
+				.header__link-cont{
+					height: 15px;
+					width: 22px;
+					left: 10px;
+				}	
 				svg {
 					width: 22px;
 					height: 15px;

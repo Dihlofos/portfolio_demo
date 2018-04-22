@@ -31,36 +31,34 @@
 			background-color: black;
 		}
 	}
+	&__bg-top {
+		display: none;
+		background-size: cover;
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	  background-size: cover;
+	  height: 100%;
+	  left: 0;
+	  position: fixed;
+	  top: 0;
+	  width: 100%;
+	  will-change: transform;
+	  z-index: -1;
+	  transition: filter 0.5s;
+	  &.active {
+			display: block;
+		}
+		&.blur {
+			filter: blur(10px);
+		}
+	}
 	&__first-screen {
 		height: 190vh;
 		background: transparent;
 		display: flex;
 		position: relative;
-		padding-top: 12.5%;
-		&:before{
-			background-size: cover;
-			background-position: 50% 0;
-			background-repeat: no-repeat;
-			background-attachment: fixed;
-	    background-size: cover;
-	    
-	    height: 100%;
-	    left: 0;
-	    position: fixed;
-	    top: 0;
-	    width: 100%;
-	    will-change: transform;
-	    z-index: -1;
-	    transition: filter 0.5s;
-		}
-		&.active {
-			&:before {
-				content: ' ';
-			}
-		}
-		
-
-
+		padding-top: 12.5%;		
 		&.blur {
 			&:before{
 				filter: blur(10px);
@@ -75,6 +73,22 @@
 		}
 		.case-single__half {
 			height: 40%;
+			align-items: flex-start;
+			padding-top: 8%;
+			overflow: visible;
+			@media ($tablet){
+				&:first-child {
+					.text-block__content {
+						animation-delay: 2s
+					}
+				}
+				&:nth-child(2) {
+					.text-block__content {
+						animation-delay: 1s
+					}
+				}
+			}
+			
 			@media ($tablet) {
 				min-height: 160px;
 				.text-block {
@@ -122,15 +136,6 @@
 			font-size: 16px;
 			line-height: 1.88;
 		}
-	}
-
-	&__bg-first {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 105%;
-		height: 105%;
-		transition: filter 0.5s;
 	}
 
 	&__half {
