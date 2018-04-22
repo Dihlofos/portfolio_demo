@@ -35,8 +35,10 @@ $(function () {
 			arrows: false,
 			cssEase: "linear"
 		});
+
 		bottomEvent();
 		headerAnim();
+
 		$(".js-appear").each(function (index) {
 			appears[index] = new Scrolling($(this));
 		});
@@ -125,8 +127,9 @@ $(function () {
 			$(".case-single__section").remove();
 			onBottom = true;
 			$(".header__link-cont").removeClass("after-anim");
+			$(".header__link--works").find("i").removeClass("after-anim");
 			$(".header__link--main").find(".header__link-cont").addClass("width-rise-18");
-			$(".header__link--works").find(".header__link-cont").addClass("width-rise-22");
+			$(".header__link--works").find("i").addClass("width-rise-8");
 			$(".header__link--menu").find(".header__link-cont").addClass("width-rise-26");
 			$("body").attr("style", "height: 200vh;");
 			$(this).one("transitionend", function () {
@@ -140,8 +143,14 @@ $(function () {
 
 	function headerAnim() {
 		$(".header__link-cont").one("animationend  animationend  webkitAnimationEnd  oanimationend MSAnimationEnd", function () {
-			$(this).removeClass("width-rise-18 width-rise-22 width-rise-26");
+			$(this).removeClass("width-rise-18 width-rise-26");
 			$(this).addClass("after-anim");
+			$(".js-appear").addClass("slide-in-top");
+		});
+
+		$(".header__link-cont").find("i").one("animationend  animationend  webkitAnimationEnd  oanimationend MSAnimationEnd", function () {
+			$(this).removeClass("width-rise-8");
+			$(this).parents(".header__link-cont").addClass("after-anim");
 		});
 	}
 
@@ -163,7 +172,9 @@ $(function () {
 
 			var oldContent = document.querySelector(".page");
 			var newContent = wrapper.querySelector(".page");
+
 			main.appendChild(newContent);
+			$(document).trigger("reinit");
 			animate(oldContent, newContent);
 		});
 	}
@@ -181,7 +192,10 @@ $(function () {
 		fadeIn.onfinish = function () {
 			$("body").attr("style", " ");
 			oldContent.parentNode.removeChild(oldContent);
-			$(document).trigger("reinit");
+			/*fix for anrdoid chrome*/
+			if (!$(".js-appear").hasClass("slide-in-top")) {
+				$(".js-appear").addClass("slide-in-top");
+			}
 		};
 	}
 });
