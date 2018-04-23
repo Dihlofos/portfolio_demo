@@ -1,8 +1,6 @@
 "use strict";
 
-svg4everybody();
-
-var APP = {};
+//=require scripts/config.js
 $(function () {
 
 	/*gloabla vars*/
