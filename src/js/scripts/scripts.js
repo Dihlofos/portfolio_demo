@@ -112,31 +112,33 @@ $(function() {
 	};
 
 	function bottomEvent() {
-		$(".js-bottom").on("click", function(e) {
-			var address = String(window.location).substr(
-				0,
-				String(window.location).lastIndexOf("/")
-			);
-			e.preventDefault();
-			$(this).addClass("full");
-			$(".case-single__bottom-title").addClass("slide-out-bottom");
-			$(".case-single__bottom-link").addClass("slide-out-bottom");
-			$(".case-single__bottom-bg").removeClass("blur");
-			$(".case-single__section").remove();
-			onBottom = true;			
-			$(".header__link-cont").removeClass("after-anim");
-			$(".header__link--works").find("i").removeClass("after-anim");
-			$(".header__link--main").find(".header__link-cont").addClass("width-rise-18");
-			$(".header__link--works").find("i").addClass("width-rise-8");
-			$(".header__link--menu").find(".header__link-cont").addClass("width-rise-26");
-			$("body").attr("style","height: 200vh;");
-			$(this).one("transitionend", function() {
-				$("html,body").animate({ scrollTop: 0 }, 0);
-				history.pushState(null, null, address + $(".js-bottom").attr("href"));
-				changePage();
-				onBottom = false;
+		if (!isMobile()) {
+			$(".js-bottom").on("click", function(e) {
+				var address = String(window.location).substr(
+					0,
+					String(window.location).lastIndexOf("/")
+				);
+				e.preventDefault();
+				$(this).addClass("full");
+				$(".case-single__bottom-title").addClass("slide-out-bottom");
+				$(".case-single__bottom-link").addClass("slide-out-bottom");
+				$(".case-single__bottom-bg").removeClass("blur");
+				$(".case-single__section").remove();
+				onBottom = true;			
+				$(".header__link-cont").removeClass("after-anim");
+				$(".header__link--works").find("i").removeClass("after-anim");
+				$(".header__link--main").find(".header__link-cont").addClass("width-rise-18");
+				$(".header__link--works").find("i").addClass("width-rise-8");
+				$(".header__link--menu").find(".header__link-cont").addClass("width-rise-26");
+				$("body").attr("style","height: 200vh;");
+				$(this).one("transitionend", function() {
+					$("html,body").animate({ scrollTop: 0 }, 0);
+					history.pushState(null, null, address + $(".js-bottom").attr("href"));
+					changePage();
+					onBottom = false;
+				});
 			});
-		});
+		}
 	}
 
 	function headerAnim() {
