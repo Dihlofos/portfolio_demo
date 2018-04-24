@@ -16,12 +16,15 @@
 		}
 	}
 	&--right {
-		padding-top: 43px;
-		right: 0;
+		padding-top: 5%;	
 		top: 0;
-		width: 10%;
+		right: 5%;
+		width: 34px;
 		height: 50%;
 		flex-direction: column;
+		.header__link--menu {
+			right: 5px;
+		}
 	}
 	&__link {
 		position: relative;

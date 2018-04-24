@@ -1,5 +1,4 @@
 .case-item {
-	position: relative;
 	padding: 38px;
 	padding-bottom: 65px;
 	text-decoration: none;
@@ -31,6 +30,15 @@
 	&--fav {
 		background-color: #0d71fc;
 	}
+	&--main {
+		padding-left: 5%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-bottom: 0;
+		padding-top: 0;
+		padding-right: 2%;
+	}
 	&__image-cont {
 		position: relative;
 		display: flex;
@@ -50,6 +58,16 @@
 		width: 80%;
 		min-height: 124px;
 		z-index: 1;
+
+
+		&--main {
+			text-align: left;
+			font-size: 34px;
+			font-weight: 800;
+			line-height: 1.18;
+			min-height: 0;
+			width: 100%;
+		}
 		
 	}
 	&__link-cont {
@@ -63,6 +81,13 @@
 		padding-left: inherit;
 		padding-right: inherit;	
 		z-index: 1;
+		&--main {
+			position: static;
+			bottom: 0;
+			padding-left: 0;
+			margin-top: 24px;
+		}
+		
 	}
 	&__link {
 		transition: color 0.3s;
@@ -74,6 +99,11 @@
   	font-weight: 300;
   	color: #0d71fc;	
   	z-index: 1;
+  	&--main {
+			font-size: 18px;
+  		font-weight: 300;
+  		text-transform: uppercase;
+		}
 	}
 	
 }

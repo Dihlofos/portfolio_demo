@@ -9,6 +9,7 @@ $(function() {
 	/*functions start*/
 	headerAnim();
 	bottomEvent();
+	contactsModal();
 
 	/*sliders init*/
 	$(".slider").slick({
@@ -102,6 +103,18 @@ $(function() {
 	$(".js-appear").each(function(index) {
 		appears[index] = new Scrolling($(this));
 	});
+
+	function contactsModal(){
+		$(".js-contacts-open").on("click", function(e){
+			e.preventDefault();
+			$(".js-contacts").attr("style", "left: 0;")
+		});
+		
+		$(".js-contacts-close").on("click", function(e){
+			e.preventDefault();
+			$(".js-contacts").attr("style", "left: -100%;")
+		});
+	}
 	
 	function isMobile(){
 		if ($(window).width()< 767){

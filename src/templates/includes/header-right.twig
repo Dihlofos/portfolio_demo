@@ -1,9 +1,20 @@
 <header class="header header--right">
-	<a href="/contacts.html" class="header__link header__link--menu">
-    {% include '../../assets/img/icon-menu.svg' %}
+
+	<a href="/contacts.html" class="header__link header__link--menu js-contacts-open">
+		<div class="header__link-cont width-rise-26">
+    	{% include '../../assets/img/icon-menu.svg' %}
+    </div>
 	</a>
+
 	<a href="/cases.html" class="header__link header__link--works">
-		{% include '../../assets/img/icon-works.svg' %}		
-	</a>
+		<div class="header__link-cont">
+			<!--
+			{% include '../../assets/img/icon-works.svg' %}	-->
+			<span><i class="inner width-rise-8"></i></span>
+			<span><i class="inner width-rise-8"></i></span>
+			<span><i class="inner width-rise-8"></i></span>
+			<span><i class="inner width-rise-8"></i></span>
+		</div>	
+	</a>	
 	
 </header>
