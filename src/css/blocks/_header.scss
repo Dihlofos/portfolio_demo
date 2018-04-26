@@ -25,6 +25,15 @@
 		.header__link--menu {
 			right: 5px;
 		}
+		@media ($mobile) {
+			width: 100%;
+			top: 0;
+			right: 0;
+			height: 50px;
+			padding-left: 5%;
+			padding-right: 5%;
+			flex-direction: row-reverse;
+		}
 	}
 	&__link {
 		position: relative;

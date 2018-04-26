@@ -10,8 +10,9 @@ $(function() {
 	headerAnim();
 	bottomEvent();
 	contactsModal();
+	worksModal();
 
-	/*sliders init*/
+	/*case sliders init*/
 	$(".slider").slick({
 		dots: true,
 		infinite: true,
@@ -19,6 +20,33 @@ $(function() {
 		fade: false,
 		arrows: false,
 		cssEase: "linear"
+	});
+	/*main slider init*/
+	$(".slider-main").on('init', function(slick){
+		$("body").addClass("no-overflow");
+		$(slick.currentTarget).addClass("is-loaded");
+		$(".slick-dots li").each(function(index){
+			$(this).addClass("slide-in-bottom");
+			$(this).attr("style","animation-delay: " + (0.5+index*0.15) + "s;")
+		})		
+	})
+
+	var sliderMain = $(".slider-main").slick({
+		dots: true,
+	  infinite: true,
+	  speed: 100,
+	  fade: true,
+	  arrows: false,
+	  cssEase: 'linear'
+	});
+
+	
+
+	sliderMain.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+	  var temp = $(slick.$slides[nextSlide]).html();
+	  $(".delay").removeClass("delay");
+	  $(slick.$slides[nextSlide]).html("");
+	  $(slick.$slides[nextSlide]).html(temp);
 	});
 
 	/*reinit content scripts*/
@@ -107,12 +135,40 @@ $(function() {
 	function contactsModal(){
 		$(".js-contacts-open").on("click", function(e){
 			e.preventDefault();
-			$(".js-contacts").attr("style", "left: 0;")
+			$(".js-contacts").attr("style", "transform: translateX(0%);")
+			$(".js-contacts").one("transitionend",function(){
+				ledderAnim($(".js-contacts-anim"),true);
+				$("body").removeClass("no-overflow");
+			});
 		});
 		
 		$(".js-contacts-close").on("click", function(e){
 			e.preventDefault();
-			$(".js-contacts").attr("style", "left: -100%;")
+			ledderAnim($(".js-contacts-anim"),false);
+			$(".js-contacts").attr("style", "transform: translateX(-100%);")
+		});
+	}
+
+	function worksModal(){
+		$(".js-works-open").on("click", function(e){
+			e.preventDefault();
+			
+			
+			$(".js-works").attr("style", "transform: translateX(0%);");
+			$(".js-works").one("transitionend",function(){
+				ledderAnim($(".js-works .works__item"),true);
+				$("body").removeClass("no-overflow");
+			});
+		});
+		
+		$(".js-works-close").on("click", function(e){
+			e.preventDefault();	
+			$(".js-works").attr("style", "transform: translateX(100%);")
+			ledderAnim($(".js-works .works__item"),false);
+			$(".js-works").one("transitionend",function(){
+				$("body").addClass("no-overflow");
+				
+			});
 		});
 	}
 	
@@ -123,6 +179,22 @@ $(function() {
 			return false;
 		}
 	};
+
+	function ledderAnim(object,todo){
+		if (todo == true){
+			object.each(function(index){
+				$(this).addClass("slide-in-top active");
+				$(this).attr("style","animation-delay: " + (0.5+index*0.2) + "s;")
+			});
+		}
+		if (todo == false){
+			object.each(function(index){
+				$(this).removeClass("slide-in-top active");
+				$(this).attr(" ")
+			});
+		}		
+	}
+
 
 	function bottomEvent() {
 		if (!isMobile()) {
