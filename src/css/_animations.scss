@@ -18,6 +18,16 @@
     transform: translateX(0);
   }
 }
+@keyframes width-rise-11 {
+  0% {
+    width: 1px;
+    transform: translateX(11px);
+  }
+  100% {
+    width: 11px;
+    transform: translateX(0);
+  }
+}
 @keyframes width-rise-26 {
   0% {
     width: 1px;
@@ -158,6 +168,9 @@
 }
 .width-rise-8 {
   animation: width-rise-8 0.2s linear both;
+}
+.width-rise-11 {
+  animation: width-rise-11 0.2s linear both;
 }
 .width-rise-26 {
   animation: width-rise-26 0.2s linear both;

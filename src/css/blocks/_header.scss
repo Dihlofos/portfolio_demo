@@ -227,6 +227,34 @@
 				}
 			}
 		}
+		&--contacts {
+			position: absolute;
+			right: 5%;
+			top: 5%;
+			width: 34px;
+			height: 34px;
+			cursor: poiner;
+			transition: transform 0.2s;
+			transform: translateX(700%);
+			width: 30px;
+			height: 30px;
+			z-index: 20;
+			span {
+				width: 34px;
+				height: 4px;
+				background-color: #0d71fc;
+				&:first-child {
+					transform: rotate(45deg);
+				}
+				&:last-child {
+					transform: rotate(-45deg);
+				}
+			}
+			@media($mobile){
+				transform: none;
+			}
+
+		}
 	}
 	
 }

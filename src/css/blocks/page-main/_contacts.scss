@@ -1,20 +1,24 @@
 .contacts {
-	position: absolute;
+	position:fixed;
 	width: 100%;
 	height: 100%;
 	background-image: url(../img/contacts-bg-3.jpg);
 	background-size: cover;
 	z-index: 20;
 	padding: 5%;
-	background-position: 50% 0;
+	background-position: 50% 0;	
+	clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+	@media ($mobile){
+		clip-path: none;
+	}
 	&__close {
 		position: absolute;
 		right: 5%;
 		top: 5%;
 		width: 34px;
 		height: 34px;
-		background-color: #fff;
 		cursor: poiner;
+		transition: transform 0.2s;
 	}
 	&__content {
 		height: 100%;
