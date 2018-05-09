@@ -2,6 +2,15 @@
 	background: transparent;
 	padding-bottom: 50vh;
 	overflow-x: hidden;
+	&__contacts {
+		top: 0;
+		left: 0;
+		transition: 500ms linear;
+		will-change: clip-path;
+		@media ($mobile){
+			left: -100%;
+		}
+	}
 	&__section {
 		display: flex;
 		flex-wrap: wrap;

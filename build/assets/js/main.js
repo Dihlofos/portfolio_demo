@@ -1,7 +1,19 @@
 "use strict";
 
 //=require scripts/config.js
+$(window).on("load", function () {
+	$(".preloader").fadeOut();
+});
+
 $(function () {
+
+	if ($(".works").length > 0) {
+		ledderAnim($(".js-works .works__item"), true);
+		$(".js-works-close").addClass("active");
+	}
+	if ($(".page-main").length > 0) {
+		$("body").addClass("no-overflow");
+	}
 
 	/*gloabla vars*/
 	var main = document.querySelector("body");
@@ -12,8 +24,10 @@ $(function () {
 	/*functions start*/
 	headerAnim();
 	bottomEvent();
+	contactsModal();
+	worksModal();
 
-	/*sliders init*/
+	/*case sliders init*/
 	$(".slider").slick({
 		dots: true,
 		infinite: true,
@@ -21,6 +35,33 @@ $(function () {
 		fade: false,
 		arrows: false,
 		cssEase: "linear"
+	});
+	/*main slider init*/
+	$(".slider-main").on('init', function (slick) {
+		$(".page-main").addClass("no-overflow");
+		$(slick.currentTarget).addClass("is-loaded");
+		$(".slick-dots li").each(function (index) {
+			$(this).addClass("slide-in-bottom");
+			$(this).attr("style", "animation-delay: " + (0.5 + index * 0.15) + "s;");
+		});
+	});
+
+	var sliderMain = $(".slider-main").slick({
+		dots: true,
+		infinite: true,
+		speed: 100,
+		fade: true,
+		arrows: true,
+		nextArrow: '<button class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="23" viewBox="0 0 15 23"><path fill="#0D71FC" fill-rule="evenodd" d="M14.845 11.46l.075.076L3.536 22.92 0 19.385l7.925-7.925L0 3.536 3.536 0 14.92 11.385l-.075.075z"/></svg></button>',
+		prevArrow: '<button class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="23" viewBox="0 0 15 23"><path fill="#0D71FC" fill-rule="evenodd" d="M.075 11.46L0 11.385 11.385 0l3.535 3.536-7.924 7.924 7.924 7.925-3.535 3.535L0 11.536l.075-.076z"/></svg></button>',
+		cssEase: 'linear'
+	});
+
+	sliderMain.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		var temp = $(slick.$slides[nextSlide]).html();
+		$(".delay").removeClass("delay");
+		$(slick.$slides[nextSlide]).html("");
+		$(slick.$slides[nextSlide]).html(temp);
 	});
 
 	/*reinit content scripts*/
@@ -106,6 +147,81 @@ $(function () {
 		appears[index] = new Scrolling($(this));
 	});
 
+	function contactsModal() {
+		$(".js-contacts-open").on("click", function (e) {
+			e.preventDefault();
+			if (!$("body").hasClass("no-overflow")) {
+				$("body").addClass("no-overflow");
+			}
+			if (!isMobile()) {
+				$(".js-contacts").attr("style", "clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);");
+			} else {
+				$(".js-contacts").attr("style", "left: 0");
+			}
+
+			$(".js-contacts").one("transitionend", function () {
+				ledderAnim($(".js-contacts-anim"), true);
+				$(".js-contacts-close").attr("style", "transform: translateX(0%);");
+			});
+		});
+		$(".js-contacts-close").on("click", function (e) {
+			e.preventDefault();
+			ledderAnim($(".js-contacts-anim"), false);
+			$("body").removeClass("no-overflow");
+			if (!isMobile()) {
+				$(".js-contacts").attr("style", "clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);");
+				$(".js-contacts-close").attr("style", "transform: translateX(700%);");
+			} else {
+				$(".js-contacts").attr("style", "left: -100%");
+			}
+		});
+	}
+
+	function worksModal() {
+		$(".js-works-open").on("click", function (e) {
+			e.preventDefault();
+			if (!isMobile()) {
+				$(".js-works").attr("style", "transform: translateX(0%);");
+			} else {
+				$(".js-works").attr("style", "left: 0;");
+			}
+
+			$(".js-works").one("transitionend", function () {
+				var address = location.pathname.split(".")[0].substring(1);
+				var backAddress = $(".js-works-open").attr("href") + "#" + address;
+				location.href = backAddress;
+			});
+		});
+		$(".js-works-close").on("click", function (e) {
+			e.preventDefault();
+			if (location.hash.length == 0) {
+				location.href = "/index.html";
+			} else {
+				location.href = location.hash.substring(1) + ".html";
+			}
+		});
+
+		/*
+  $(".js-works-close").on("click", function(e){
+  	e.preventDefault();	
+  	if (!isMobile()){
+  		$(".js-works").attr("style", "transform: translateX(100%);")
+  	} else {
+  		$(".js-works").attr("style", "left: -100%;");
+  	}
+  	
+  	ledderAnim($(".js-works .works__item"),false);
+  	$(".js-works").one("transitionend",function(){
+  		
+  		if (!isMobile()){
+  			$(".js-contacts-close").attr("style", "transform: translateX(700%);");
+  		}
+  		
+  		
+  	});
+  });*/
+	}
+
 	function isMobile() {
 		if ($(window).width() < 767) {
 			return true;
@@ -113,6 +229,21 @@ $(function () {
 			return false;
 		}
 	};
+
+	function ledderAnim(object, todo) {
+		if (todo == true) {
+			object.each(function (index) {
+				$(this).addClass("slide-in-top active");
+				$(this).attr("style", "animation-delay: " + (0.5 + index * 0.2) + "s;");
+			});
+		}
+		if (todo == false) {
+			object.each(function (index) {
+				$(this).removeClass("slide-in-top active");
+				$(this).attr(" ");
+			});
+		}
+	}
 
 	function bottomEvent() {
 		if (!isMobile()) {

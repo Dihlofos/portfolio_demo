@@ -8,6 +8,7 @@
 		flex-wrap: wrap;
 	}
 	&__case-item {
+		position: relative;
 		width: 340px;
 		@media ($mobile-min) {
 			width: 100%;

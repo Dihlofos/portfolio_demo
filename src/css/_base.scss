@@ -1,90 +1,111 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    font-size: 62.5%;
+  font-size: 62.5%;
+  max-height: 100%;
 }
 
 body {
-    line-height: 1.5;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: 'Open Sans', sans-serif;
-    background-color: #000;
-    color: white;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+  &.no-overflow {
+    overflow: hidden;
+  }
 }
 
 address {
-    font-style: normal;
+  font-style: normal;
 }
 
 img {
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 label {
-    cursor: pointer;
-    user-select: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 @include placeholder {
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 input[placeholder] {
-    text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
 input::-moz-placeholder {
-    text-overflow:ellipsis;
-} 
+  text-overflow: ellipsis;
+}
 
 input:-moz-placeholder {
-    text-overflow:ellipsis;
-} 
+  text-overflow: ellipsis;
+}
 
 input:-ms-input-placeholder {
-    text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
 :focus::-webkit-input-placeholder {
-    color: transparent
+  color: transparent;
 }
 
 :focus::-moz-placeholder {
-    color: transparent
+  color: transparent;
 }
 
 :focus:-moz-placeholder {
-    color: transparent
+  color: transparent;
 }
 
 :focus:-ms-input-placeholder {
-    color: transparent
+  color: transparent;
 }
 
 .video {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
 
-    iframe,
-    object,
-    embed {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
+  iframe,
+  object,
+  embed {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.preloader {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 13;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
+  line-height: 1.18;
+  font-weight: 800;
+  color: #0d71fc;
+  display: flex;
+
 }

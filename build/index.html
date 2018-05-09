@@ -22,35 +22,106 @@
     <!-- CONTENT -->
 
     <header class="header header--right">
-        <a href="/contacts.html" class="header__link header__link--menu">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 15" 
-	preserveAspectRatio="none">
+
+
+        <a href="/contacts.html" class="header__link header__link--menu js-contacts-open">
+            <div class="header__link-cont width-rise-26">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 15" preserveAspectRatio="none">
 
     <g fill="#0D71FC" fill-rule="evenodd">
         <path d="M0 0h26v5H0zM10 10h16v5H10z"/>
     </g>
 </svg>
 
-	</a>
-        <a href="/cases.html" class="header__link header__link--works">
-		<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
-    <g fill="#0D71FC" fill-rule="evenodd">
-        <path d="M0 0h9v9H0zM0 13h9v9H0zM13 0h9v9h-9zM13 13h9v9h-9z"/>
-    </g>
-</svg>
-		
-	</a>
+            </div>
+        </a>
+
+        <a href="/cases.html" class="header__link header__link--works js-works-open">
+            <div class="header__link-cont">
+                <span><i class="inner width-rise-8"></i></span>
+                <span><i class="inner width-rise-8"></i></span>
+                <span><i class="inner width-rise-8"></i></span>
+                <span><i class="inner width-rise-8"></i></span>
+            </div>
+        </a>
 
     </header>
 
 
 
-    <div class="links">
-        <ul>
-            <li>
-                <a href="/staff-design">single page staff.design</a>
-            </li>
-        </ul>
+    <div class="preloader">
+        <img src="assets/img/preloader.gif" width="50" height="50">
+    </div>
+    <div class="page-main">
+        <div class="contacts page-main__contacts js-contacts">
+            <a href="/cases.html" class="header__link header__link--contacts js-contacts-close">
+					<span><i class="inner "></i></span>
+					<span><i class="inner "></i></span>
+				</a>
+            <div class="contacts__content">
+                <div class="contacts__name js-contacts-anim">Maks Pirogov</div>
+                <div class="contacts__job js-contacts-anim">Product designer at Home Credit Bank</div>
+            </div>
+            <div class="contacts__bottom">
+                <div class="contacts__bottom-item js-contacts-anim">
+                    <div class="contacts__bottom-title">Mail</div>
+                    <div class="contacts__bottom-text">makspirogov@gmail.com</div>
+                </div>
+                <div class="contacts__bottom-item js-contacts-anim">
+                    <div class="contacts__bottom-title">Dribbble</div>
+                    <div class="contacts__bottom-text">@makspirogov</div>
+                </div>
+                <div class="contacts__bottom-item js-contacts-anim">
+                    <div class="contacts__bottom-title">Insta</div>
+                    <div class="contacts__bottom-text">@myfuckingart</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="works page-main__works js-works">
+
+        </div>
+
+        <div class="page-main__slider slider-main">
+            <div class="slider-block__item">
+                <picture>
+                    <source media="(min-width: 1440px)" , srcset="assets/img/main-slider-1_2.png" width="1670" height="984">
+                    <img class="slide-in-top delay" width="835" height="492" src="assets/img/main-slider-1_1.png">
+                </picture>
+                <a href="/case-single.html" class="case-item case-item--main page-main__case-item">
+                    <div class="case-item__title case-item__title--main slide-in-top delay">Личный кабинет системы лояльности Банка Хоум Кредит</div>
+                    <div class="case-item__link-cont case-item__link-cont--main">
+                        <div class="case-item__link case-item__link--main slide-in-top delay">Смотреть кейс</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="slider-block__item">
+                <picture>
+                    <source media="(min-width: 1440px)" , srcset="assets/img/main-slider-1_2.png" width="1670" height="984">
+                    <img class="slide-in-top" width="835" height="492" src="assets/img/main-slider-1_1.png">
+                </picture>
+                <a href="/case-single.html" class="case-item case-item--main page-main__case-item">
+                    <div class="case-item__title case-item__title--main slide-in-top">Личный кабинет системы лояльности Банка Хоум Кредит</div>
+                    <div class="case-item__link-cont case-item__link-cont--main">
+                        <div class="case-item__link case-item__link--main slide-in-top">Смотреть кейс</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="slider-block__item">
+                <picture>
+                    <source media="(min-width: 1440px)" , srcset="assets/img/main-slider-1_2.png" width="1670" height="984">
+                    <img class="slide-in-top" width="835" height="492" src="assets/img/main-slider-1_1.png">
+                </picture>
+                <a href="/case-single-blocks.html" class="case-item case-item--main page-main__case-item">
+                    <div class="case-item__title case-item__title--main slide-in-top">Личный кабинет системы лояльности Банка Хоум Кредит</div>
+                    <div class="case-item__link-cont case-item__link-cont--main">
+                        <div class="case-item__link case-item__link--main slide-in-top">Смотреть кейс</div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 
 

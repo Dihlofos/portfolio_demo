@@ -1,0 +1,157 @@
+.page-main {	
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	padding: 5%;
+	display: flex;
+	&__case-item{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 50%;
+		height: 50%;
+		padding-left: 5%;
+		background-color: #000;
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+	&__slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+	}
+	&__contacts {
+		top: 0;
+		left: 0;
+		transition: 500ms linear;
+		will-change: clip-path;
+		
+		@media ($mobile){
+			left: -100%;
+		}
+	}
+	&__works{
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translateX(100%);
+		transition: 500ms linear;
+		will-change: transform;
+		@media($mobile) {
+			transform: none;
+			left: -100%;
+		}
+	}
+
+	.slider-block__item {
+		img {
+			max-width: 70%;
+			max-height: 95vh;			
+			&.delay {
+				animation-delay: 0.5s;
+			}
+		}
+	}
+
+
+
+
+
+	/*Slider*/
+
+	.slider-main {
+		display:none;
+		&.is-loaded {
+			display:block;
+		}
+	}
+	.slick-dots {
+		display: flex;
+		flex-direction: column;
+		left: auto;
+		right: 0;
+		width: 6%;
+		bottom: 20px;
+		li {
+			height: 24px;
+			align-items: center;
+			justify-content: center;
+			display: inline-flex;
+		}
+		@media ($mobile){
+			flex-direction: row;
+			width: 100%;
+			justify-content: center;
+		}
+	}
+	.slick-track {
+		height: 100vh;
+	}
+  .slick-slide {
+    margin: 0;
+  }
+  .slick-list {
+    margin: 0px;
+  }
+	.slick-slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		@media ($mobile) {
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding-top: 130px;
+		}
+	}
+
+	.slick-arrow {
+		position: absolute;
+		margin: auto;
+		width: 20%;		
+		font-size: 0;
+		background: transparent;
+		border: none;
+		z-index: 10;
+		top: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		svg {
+			opacity: 0;
+			transition: opacity 0.3s;
+		}		
+		&:hover {
+			svg {
+				opacity: 1;
+			}
+		}
+	}
+	.slick-prev {
+		height: 50%;
+		left: 0%;	
+		justify-content: flex-start;
+		padding-left: 5%;
+		padding-top: 20%;
+		@media ($mobile){
+			height: 100%;
+			padding-top: 0;
+		}
+	}
+	.slick-next {
+		right: 10%;
+		left: auto;
+		height: 100%;
+		justify-content: flex-end;
+		padding-right: 5%;
+		@media ($mobile){
+			right: 0;
+		}
+	}
+}
+

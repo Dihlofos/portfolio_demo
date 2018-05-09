@@ -1,0 +1,93 @@
+.contacts {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/contacts-bg-3.jpg);
+	background-size: cover;
+	z-index: 20;
+	padding: 5%;
+	background-position: 50% 0;	
+	clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+	@media ($mobile){
+		clip-path: none;
+	}
+	&__close {
+		position: absolute;
+		right: 5%;
+		top: 5%;
+		width: 34px;
+		height: 34px;
+		cursor: poiner;
+		transition: transform 0.2s;
+	}
+	&__content {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&__name {
+		font-size: 64px;
+  	font-weight: 800;
+  	display: none;
+  	&.active{
+  		display: block;
+  	}
+  	@media ($mobile) {
+  		font-size: 34px;
+  		line-height: 24px;
+  		margin-bottom: 13px;
+  	}
+	}
+	&__job {
+		font-size: 24px;
+  	font-weight: 300;
+  	display: none;
+  	&.active{
+  		display: block;
+  	}
+  	@media ($mobile) {
+  		font-size: 18px;
+  		padding-right: 10%;
+  	}
+	}
+	&__bottom {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 5%;	
+		bottom: 0;
+		font-weight: 300;
+		font-size: 12px;
+		width: 71%;
+		@media ($mobile) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	&__bottom-item{
+		display: none;
+  	&.active{
+  		display: block;
+  	}
+		@media ($mobile){
+			margin-bottom: 20px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__bottom-item-title {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	&__bottom-text {
+		font-size: 16px;
+		line-height: 30px;
+		@media ($mobile){
+			font-size: 14px;
+		}
+	}
+
+}
