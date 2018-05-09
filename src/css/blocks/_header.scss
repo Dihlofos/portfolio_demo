@@ -239,6 +239,9 @@
 			width: 30px;
 			height: 30px;
 			z-index: 20;
+			&.active {
+				transform: translateX(0);
+			}
 			span {
 				width: 34px;
 				height: 4px;

@@ -7,6 +7,14 @@ $(window).on("load", function () {
 
 $(function () {
 
+	if ($(".works").length > 0) {
+		ledderAnim($(".js-works .works__item"), true);
+		$(".js-works-close").addClass("active");
+	}
+	if ($(".page-main").length > 0) {
+		$("body").addClass("no-overflow");
+	}
+
 	/*gloabla vars*/
 	var main = document.querySelector("body");
 	var getHeader = $(".header");
@@ -170,7 +178,6 @@ $(function () {
 	}
 
 	function worksModal() {
-
 		$(".js-works-open").on("click", function (e) {
 			e.preventDefault();
 			if (!isMobile()) {
@@ -180,27 +187,39 @@ $(function () {
 			}
 
 			$(".js-works").one("transitionend", function () {
-				ledderAnim($(".js-works .works__item"), true);
-				$(".js-works-close").attr("style", "transform: translateX(0%);");
+				var address = location.pathname.split(".")[0].substring(1);
+				var backAddress = $(".js-works-open").attr("href") + "#" + address;
+				location.href = backAddress;
 			});
 		});
-
 		$(".js-works-close").on("click", function (e) {
 			e.preventDefault();
-			if (!isMobile()) {
-				$(".js-works").attr("style", "transform: translateX(100%);");
+			if (location.hash.length == 0) {
+				location.href = "/index.html";
 			} else {
-				$(".js-works").attr("style", "left: -100%;");
+				location.href = location.hash.substring(1) + ".html";
 			}
-
-			ledderAnim($(".js-works .works__item"), false);
-			$(".js-works").one("transitionend", function () {
-
-				if (!isMobile()) {
-					$(".js-contacts-close").attr("style", "transform: translateX(700%);");
-				}
-			});
 		});
+
+		/*
+  $(".js-works-close").on("click", function(e){
+  	e.preventDefault();	
+  	if (!isMobile()){
+  		$(".js-works").attr("style", "transform: translateX(100%);")
+  	} else {
+  		$(".js-works").attr("style", "left: -100%;");
+  	}
+  	
+  	ledderAnim($(".js-works .works__item"),false);
+  	$(".js-works").one("transitionend",function(){
+  		
+  		if (!isMobile()){
+  			$(".js-contacts-close").attr("style", "transform: translateX(700%);");
+  		}
+  		
+  		
+  	});
+  });*/
 	}
 
 	function isMobile() {
