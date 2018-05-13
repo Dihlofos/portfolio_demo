@@ -13,30 +13,7 @@
 
 {% block page %}
   <div class="page case-single">
-    <div class="contacts case-single__contacts js-contacts">
-        <a href="/cases.html" class="header__link header__link--contacts js-contacts-close">
-          <span><i class="inner "></i></span>
-          <span><i class="inner "></i></span>
-        </a>
-        <div class="contacts__content">
-          <div class="contacts__name js-contacts-anim">Maks Pirogov</div>
-          <div class="contacts__job js-contacts-anim">Product designer at Home Credit Bank</div>
-        </div>
-        <div class="contacts__bottom">
-          <div class="contacts__bottom-item js-contacts-anim">
-            <div class="contacts__bottom-title">Mail</div>
-            <div class="contacts__bottom-text">makspirogov@gmail.com</div>
-          </div>
-          <div class="contacts__bottom-item js-contacts-anim">
-            <div class="contacts__bottom-title">Dribbble</div>
-            <div class="contacts__bottom-text">@makspirogov</div>
-          </div>
-          <div class="contacts__bottom-item js-contacts-anim">
-            <div class="contacts__bottom-title">Insta</div>
-            <div class="contacts__bottom-text">@myfuckingart</div>
-          </div>
-        </div>        
-      </div>
+    {% include 'templates/includes/contacts.twig' %}  
       
       <div class="works page-main__works js-works">
        

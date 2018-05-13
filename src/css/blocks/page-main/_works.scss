@@ -40,13 +40,16 @@
 				z-index: 0;
 			}
 			&:hover {
-				&:after {
-					background-color: #0d71fc;
-					width: 100%;
+				@media ($desktop-only) {
+					&:after {
+						background-color: #0d71fc;
+						width: 100%;
+					}
+					.case-item__link {
+						color: white;
+					}
 				}
-				.case-item__link {
-					color: white;
-				}
+				
 			}
 			img {
 				z-index: 5;
