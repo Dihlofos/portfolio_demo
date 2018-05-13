@@ -31,7 +31,7 @@ $(function () {
 	$(".slider").slick({
 		dots: true,
 		infinite: true,
-		speed: 500,
+		speed: 250,
 		fade: false,
 		arrows: false,
 		cssEase: "linear"
@@ -69,7 +69,7 @@ $(function () {
 		$(".slider").slick({
 			dots: true,
 			infinite: true,
-			speed: 500,
+			speed: 250,
 			fade: false,
 			arrows: false,
 			cssEase: "linear"
@@ -77,6 +77,8 @@ $(function () {
 
 		bottomEvent();
 		headerAnim();
+		contactsModal();
+		worksModal();
 
 		$(".js-appear").each(function (index) {
 			appears[index] = new Scrolling($(this));
@@ -153,31 +155,28 @@ $(function () {
 			if (!$("body").hasClass("no-overflow")) {
 				$("body").addClass("no-overflow");
 			}
-			if (!isMobile()) {
-				$(".js-contacts").attr("style", "clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);");
-			} else {
-				$(".js-contacts").attr("style", "left: 0");
-			}
+			$(".js-contacts").attr("style", "transform: translateX(0%);");
 
 			$(".js-contacts").one("transitionend", function () {
 				ledderAnim($(".js-contacts-anim"), true);
-				$(".js-contacts-close").attr("style", "transform: translateX(0%);");
+				$(".js-contacts-close").addClass("active");
 			});
 		});
 		$(".js-contacts-close").on("click", function (e) {
 			e.preventDefault();
 			ledderAnim($(".js-contacts-anim"), false);
 			$("body").removeClass("no-overflow");
-			if (!isMobile()) {
-				$(".js-contacts").attr("style", "clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);");
-				$(".js-contacts-close").attr("style", "transform: translateX(700%);");
-			} else {
-				$(".js-contacts").attr("style", "left: -100%");
-			}
+			$(".js-contacts").attr("style", "transform: translateX(-100%);");
+			$(".js-contacts-close").removeClass("active");
 		});
 	}
 
 	function worksModal() {
+		if (!isMobile()) {
+			$(".works__item").hover(function () {
+				$(".js-works-close").toggleClass("white-bg");
+			});
+		}
 		$(".js-works-open").on("click", function (e) {
 			e.preventDefault();
 			if (!isMobile()) {
