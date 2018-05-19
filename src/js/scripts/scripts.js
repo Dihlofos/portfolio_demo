@@ -163,17 +163,17 @@ $(function() {
 		$(".js-contacts-open").on("click", function(e){
 			e.preventDefault();	
 			if (!$("body").hasClass("no-overflow")){
-				$("body").addClass("no-overflow");
-			}
-				$(".js-contacts").attr("style", "transform: translateX(0%);");
-			
+				$("body").addClass("no-overflow");			}
+				$(".js-contacts").attr("style", "transform: translateX(0%);");			
 			$(".js-contacts").one("transitionend",function(){
+				$(".js-contacts-bg").addClass("bg-visible");
 				ledderAnim($(".js-contacts-anim"),true);
 				$(".js-contacts-close").addClass("active");
 			});			
 		});		
 		$(".js-contacts-close").on("click", function(e){
 			e.preventDefault();
+			$(".js-contacts-bg").removeClass("bg-visible");
 			ledderAnim($(".js-contacts-anim"),false);
 			$("body").removeClass("no-overflow");
 				$(".js-contacts").attr("style", "transform: translateX(-100%);");
