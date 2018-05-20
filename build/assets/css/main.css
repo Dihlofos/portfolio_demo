@@ -1407,9 +1407,6 @@ input:-ms-input-placeholder {
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .contacts__bg-image {
@@ -1419,14 +1416,17 @@ input:-ms-input-placeholder {
   width: 100%;
   height: 100%;
   background-size: cover;
-  -webkit-transition: opacity 1s;
-  -o-transition: opacity 1s;
-  transition: opacity 1s;
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   opacity: 0;
 }
 
 .contacts__bg-image.bg-visible {
   opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 .contacts__close {
@@ -1541,9 +1541,9 @@ input:-ms-input-placeholder {
 .page-main__contacts {
   top: 0;
   left: 0;
-  -webkit-transition: 500ms linear;
-  -o-transition: 500ms linear;
-  transition: 500ms linear;
+  -webkit-transition: 300ms linear;
+  -o-transition: 300ms linear;
+  transition: 300ms linear;
   will-change: clip-path;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
@@ -1557,9 +1557,9 @@ input:-ms-input-placeholder {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: 500ms linear;
-  -o-transition: 500ms linear;
-  transition: 500ms linear;
+  -webkit-transition: 300ms linear;
+  -o-transition: 300ms linear;
+  transition: 300ms linear;
   will-change: transform;
 }
 

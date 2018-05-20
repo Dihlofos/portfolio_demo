@@ -7,7 +7,6 @@
 	@media ($mobile) {
 		//height: 95vh;
 	}
-
 	&__case-item{
 		position: absolute;
 		bottom: 0;
@@ -38,7 +37,7 @@
 	&__contacts {
 		top: 0;
 		left: 0;
-		transition: 500ms linear;
+		transition: 300ms linear;
 		will-change: clip-path;
 		transform: translateX(-100%);
 	}
@@ -47,7 +46,7 @@
 		top: 0;
 		left: 0;
 		transform: translateX(100%);
-		transition: 500ms linear;
+		transition: 300ms linear;
 		will-change: transform;
 		@media($mobile) {
 			transform: none;

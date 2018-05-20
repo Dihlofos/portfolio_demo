@@ -166,9 +166,12 @@ $(function () {
 			e.preventDefault();
 			$(".js-contacts-bg").removeClass("bg-visible");
 			ledderAnim($(".js-contacts-anim"), false);
-			$("body").removeClass("no-overflow");
-			$(".js-contacts").attr("style", "transform: translateX(-100%);");
-			$(".js-contacts-close").removeClass("active");
+			$(".js-contacts-bg").one("transitionend", function () {
+
+				$("body").removeClass("no-overflow");
+				$(".js-contacts").attr("style", "transform: translateX(-100%);");
+				$(".js-contacts-close").removeClass("active");
+			});
 		});
 	}
 
