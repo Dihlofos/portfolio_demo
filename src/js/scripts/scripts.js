@@ -1,17 +1,19 @@
 $(window).on("load", function(){
 	$(".preloader").fadeOut();
+	$(".contacts").addClass("loaded");
+	contactsModal();
+	
+
 })
 
-
-
-
-
-
-
+/*gloabla vars*/
+var main = document.querySelector("body");
+var getHeader = $(".header");
+var onBottom = false;
+var appears = [];
 
 
 $(function() {
-
 	if ($(".works").length > 0) {
 		ledderAnim($(".js-works .works__item"),true);
 		$(".js-works-close").addClass("active");
@@ -20,20 +22,11 @@ $(function() {
 		$("body").addClass("no-overflow");
 	}
 
-
-
-	
-	/*gloabla vars*/
-	var main = document.querySelector("body");
-	var getHeader = $(".header");
-	var onBottom = false;
-	var appears = [];
-
 	/*functions start*/
 	headerAnim();
 	bottomEvent();
-	contactsModal();
 	worksModal();
+	
 
 	/*case sliders init*/
 	$(".slider").slick({
@@ -89,6 +82,7 @@ $(function() {
 		headerAnim();
 		contactsModal();
 		worksModal();
+		$(".contacts").addClass("loaded")
 
 		$(".js-appear").each(function(index) {
 			appears[index] = new Scrolling($(this));
@@ -122,6 +116,7 @@ $(function() {
 			scrollState = false;
 		}
 	});
+});
 
 	function Scrolling(item) {
 		this.item = item;		
@@ -164,7 +159,7 @@ $(function() {
 			e.preventDefault();	
 			if (!$("body").hasClass("no-overflow")){
 				$("body").addClass("no-overflow");			}
-				$(".js-contacts").attr("style", "transform: translateX(0%);");			
+			$(".js-contacts").attr("style", "transform: translateX(0%);");			
 			$(".js-contacts").one("transitionend",function(){
 				$(".js-contacts-bg").addClass("bg-visible");
 				ledderAnim($(".js-contacts-anim"),true);
@@ -218,26 +213,7 @@ $(function() {
 			}
 			
 		});
-
-		/*
-		$(".js-works-close").on("click", function(e){
-			e.preventDefault();	
-			if (!isMobile()){
-				$(".js-works").attr("style", "transform: translateX(100%);")
-			} else {
-				$(".js-works").attr("style", "left: -100%;");
-			}
-			
-			ledderAnim($(".js-works .works__item"),false);
-			$(".js-works").one("transitionend",function(){
-				
-				if (!isMobile()){
-					$(".js-contacts-close").attr("style", "transform: translateX(700%);");
-				}
-				
-				
-			});
-		});*/
+		
 	}
 	
 	function isMobile(){
@@ -368,4 +344,3 @@ $(function() {
 			
 		};
 	}
-});

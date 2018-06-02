@@ -1,5 +1,5 @@
 .contacts {
-	display: flex;
+	display: none;
 	flex-direction: column;
 	justify-content: center;
 	position: fixed;
@@ -11,6 +11,10 @@
 	padding: 5%;
 	background-position: 50% 0;	
 	transform: translateX(-100%);
+	&.loaded {
+		display: flex;
+	}
+	
 	@media ($mobile) {
 		padding-bottom: 0;
 		justify-content: flex-end;
@@ -23,6 +27,7 @@
 		height: 100%;
 		background-size: cover;
 		transition: opacity 0.5s;
+		background-image: url(../img/contacts-bg-3.jpg);
 		opacity: 0;
 		&.bg-visible {
 			opacity: 1;
