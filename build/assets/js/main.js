@@ -192,8 +192,9 @@ function worksModal() {
 		}
 
 		$(".js-works").one("transitionend", function () {
-			var address = location.pathname.split(".")[0].substring(1);
+			var address = location.href.split(".")[0].substring(0);
 			var backAddress = $(".js-works-open").attr("href") + "#" + address;
+
 			location.href = backAddress;
 		});
 	});
