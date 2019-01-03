@@ -192,7 +192,8 @@ function worksModal() {
 		}
 
 		$(".js-works").one("transitionend", function () {
-			var address = location.href.split(".")[0].substring(0);
+			//var address = location.href.split(".")[0].substring(0);
+			var address = location.href;
 			var backAddress = $(".js-works-open").attr("href") + "#" + address;
 
 			location.href = backAddress;
@@ -201,9 +202,10 @@ function worksModal() {
 	$(".js-works-close").on("click", function (e) {
 		e.preventDefault();
 		if (location.hash.length == 0) {
-			location.href = "/index.html";
+			location.href = "https://dihlofos.github.io/portfolio_demo/build/";
 		} else {
-			location.href = location.hash.substring(1) + ".html";
+			//location.href = location.hash.substring(1) + ".html";
+			location.href = location.hash.substring(1);
 		}
 	});
 }
